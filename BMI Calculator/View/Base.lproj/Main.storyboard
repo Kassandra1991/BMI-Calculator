@@ -47,13 +47,16 @@
                                             <constraint firstAttribute="height" constant="21" id="awV-O7-SeZ"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="jwe-15-YSL">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="jwe-15-YSL">
                                         <rect key="frame" x="-2" y="537" width="365" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="sI8-RJ-zkK"/>
                                         </constraints>
                                         <color key="minimumTrackTintColor" red="0.711065948" green="0.71447402240000002" blue="0.86276334519999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.54363793130000004" green="0.54267758129999999" blue="0.80002826449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="heightValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="kCB-6p-lbr"/>
+                                        </connections>
                                     </slider>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="eZn-tQ-DpI">
                                         <rect key="frame" x="0.0" y="607" width="361" height="21"/>
@@ -75,13 +78,16 @@
                                             <constraint firstAttribute="height" constant="21" id="LOE-Au-6U8"/>
                                         </constraints>
                                     </stackView>
-                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="IvP-2v-Ke8">
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="100" minValue="0.0" maxValue="150" translatesAutoresizingMaskIntoConstraints="NO" id="IvP-2v-Ke8">
                                         <rect key="frame" x="-2" y="638" width="365" height="61"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="kD6-dC-lXu"/>
                                         </constraints>
                                         <color key="minimumTrackTintColor" red="0.711065948" green="0.71447402240000002" blue="0.86276334519999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="thumbTintColor" red="0.54363793130000004" green="0.54267758129999999" blue="0.80002826449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <action selector="weightValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="DGn-6D-b9U"/>
+                                        </connections>
                                     </slider>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EJG-KI-094">
                                         <rect key="frame" x="0.0" y="708" width="361" height="51"/>
@@ -97,14 +103,18 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IvP-2v-Ke8" secondAttribute="trailing" id="6D7-wh-QNz"/>
+                                    <constraint firstItem="jwe-15-YSL" firstAttribute="leading" secondItem="TxR-AK-tMx" secondAttribute="leading" id="DCq-vs-eNa"/>
                                     <constraint firstAttribute="trailing" secondItem="eZn-tQ-DpI" secondAttribute="trailing" id="FW4-vK-e05"/>
                                     <constraint firstItem="HOc-o1-6Fl" firstAttribute="leading" secondItem="TxR-AK-tMx" secondAttribute="leading" id="Fze-lV-aUD"/>
                                     <constraint firstAttribute="trailing" secondItem="EJG-KI-094" secondAttribute="trailing" id="GEq-1Q-02T"/>
                                     <constraint firstItem="7pk-u9-bYx" firstAttribute="leading" secondItem="TxR-AK-tMx" secondAttribute="leading" id="K5y-RT-Yto"/>
                                     <constraint firstItem="EJG-KI-094" firstAttribute="leading" secondItem="TxR-AK-tMx" secondAttribute="leading" id="K7K-v3-hT4"/>
+                                    <constraint firstAttribute="trailing" secondItem="jwe-15-YSL" secondAttribute="trailing" id="SOq-dY-E2M"/>
                                     <constraint firstAttribute="trailing" secondItem="7pk-u9-bYx" secondAttribute="trailing" id="a2S-Wk-tWZ"/>
                                     <constraint firstItem="eZn-tQ-DpI" firstAttribute="leading" secondItem="TxR-AK-tMx" secondAttribute="leading" id="qmZ-F4-kZ1"/>
                                     <constraint firstAttribute="trailing" secondItem="HOc-o1-6Fl" secondAttribute="trailing" id="sdw-fS-zqy"/>
+                                    <constraint firstItem="IvP-2v-Ke8" firstAttribute="leading" secondItem="TxR-AK-tMx" secondAttribute="leading" id="tpU-sY-ltg"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -120,6 +130,10 @@
                             <constraint firstItem="TxR-AK-tMx" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="d12-Wg-Qcd"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heightLabel" destination="QNY-m4-d1e" id="14J-cR-cMM"/>
+                        <outlet property="weightLabel" destination="920-v9-47C" id="eDX-TC-v6a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -160,7 +174,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kT-sq-Jak">
-                                <rect key="frame" x="0.0" y="767" width="393" height="51"/>
+                                <rect key="frame" x="16" y="767" width="361" height="51"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="tdv-Wd-TI5"/>
@@ -177,9 +191,9 @@
                         <constraints>
                             <constraint firstItem="Y5c-f2-34W" firstAttribute="leading" secondItem="4Wj-Mz-uJ9" secondAttribute="leading" id="0aY-pS-wGX"/>
                             <constraint firstAttribute="bottom" secondItem="Y5c-f2-34W" secondAttribute="bottom" id="4xJ-2U-9Zp"/>
-                            <constraint firstItem="0kT-sq-Jak" firstAttribute="leading" secondItem="4Wj-Mz-uJ9" secondAttribute="leading" id="BbN-CY-YO0"/>
+                            <constraint firstItem="0kT-sq-Jak" firstAttribute="leading" secondItem="4Wj-Mz-uJ9" secondAttribute="leading" constant="16" id="BbN-CY-YO0"/>
                             <constraint firstItem="4Wj-Mz-uJ9" firstAttribute="bottom" secondItem="0kT-sq-Jak" secondAttribute="bottom" id="RPM-oZ-I94"/>
-                            <constraint firstItem="0kT-sq-Jak" firstAttribute="trailing" secondItem="4Wj-Mz-uJ9" secondAttribute="trailing" id="UZE-4J-Tqt"/>
+                            <constraint firstItem="0kT-sq-Jak" firstAttribute="trailing" secondItem="4Wj-Mz-uJ9" secondAttribute="trailing" constant="-16" id="UZE-4J-Tqt"/>
                             <constraint firstItem="Y5c-f2-34W" firstAttribute="trailing" secondItem="4Wj-Mz-uJ9" secondAttribute="trailing" id="WHC-9F-Vh1"/>
                             <constraint firstItem="7IB-oO-Tyk" firstAttribute="centerX" secondItem="iFm-XA-3d5" secondAttribute="centerX" id="YTQ-bR-bKk"/>
                             <constraint firstItem="7IB-oO-Tyk" firstAttribute="centerY" secondItem="iFm-XA-3d5" secondAttribute="centerY" id="inr-so-lKe"/>

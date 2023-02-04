@@ -100,6 +100,9 @@
                                             <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
                                             <color key="baseForegroundColor" red="1" green="1" blue="0.99999994039999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="calculateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z0r-VY-bbh"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -132,7 +135,9 @@
                     </view>
                     <connections>
                         <outlet property="heightLabel" destination="QNY-m4-d1e" id="14J-cR-cMM"/>
+                        <outlet property="heightSlider" destination="jwe-15-YSL" id="4p8-Ff-oD3"/>
                         <outlet property="weightLabel" destination="920-v9-47C" id="eDX-TC-v6a"/>
+                        <outlet property="weightSlider" destination="IvP-2v-Ke8" id="SmO-dY-0KY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,8 +8,7 @@
 import UIKit
 
 class CalculateViewController: UIViewController {
-    
-    //var bmiValue  = "0.0"
+
     var calculatorBrain = CalculatorBrain()
     
     @IBOutlet weak var heightLabel: UILabel!
@@ -17,10 +16,10 @@ class CalculateViewController: UIViewController {
 
     @IBOutlet weak var heightSlider: UISlider!
     @IBOutlet weak var weightSlider: UISlider!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
 
     @IBAction func heightValueChanged(_ sender: UISlider) {
         heightLabel.text = String(format: "%.2f", sender.value) + "m"
@@ -41,6 +40,8 @@ class CalculateViewController: UIViewController {
         if segue.identifier == "goToResult" {
             let destinationVC = segue.destination as! ResultViewController
             destinationVC.bmiValue = calculatorBrain.getBMIValue()
+            destinationVC.advice = calculatorBrain.getAdvice()
+            destinationVC.color = calculatorBrain.getColor()
         }
     }
 }
